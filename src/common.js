@@ -1,9 +1,12 @@
 const path = require('path')
+
+/*
 const homedir = /0.1/.test(process.version)
   ? require('os-homedir')() // Node 0.12
   : require('os').homedir() // Node 4+
+*/
 
-const hotelDir = path.join(homedir, '.hotel')
+const hotelDir = path.join(process.cwd(), '.hotel')
 
 module.exports = {
   hotelDir,
