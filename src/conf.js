@@ -19,9 +19,12 @@ const defaults = {
   http_proxy: true
 }
 
-// Create conf it it doesn't exist
+// Notify the user if it's not a project
 const data = JSON.stringify(defaults, null, 2)
-if (!fs.existsSync(confFile)) fs.writeFileSync(confFile, data)
+if (!fs.existsSync(confFile)) {
+  console.log("You're not in a valid project. Use 'vvd create' to create a new project.");
+  process.exit(1);
+}
 
 // Read file
 const conf = JSON.parse(fs.readFileSync(confFile))
