@@ -8,5 +8,5 @@ function init() {
   }
   const data = JSON.stringify(defaults, null, 2);
   fs.writeFileSync(confFile, data);
-  console.log("Successfully created your project.")
+  console.log("Successfully created your project.");
 }
