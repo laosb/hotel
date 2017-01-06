@@ -1,5 +1,6 @@
 const yargs = require('yargs')
 const servers = require('./servers')
+const init = require('./init');
 const daemon = require('./daemon')
 const pkg = require('../../package.json')
 
@@ -42,6 +43,12 @@ module.exports = (processArgv) => {
           })
       },
       (argv) => servers.rm(argv)
+    )
+    .command(
+      'init',
+      'Init project',
+      {},
+      (argv) => init(argv)
     )
     .command(
       'ls',
