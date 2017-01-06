@@ -10,3 +10,5 @@ function init() {
   fs.writeFileSync(confFile, data);
   console.log("Successfully created your project.");
 }
+
+module.exports = init;
